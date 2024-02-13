@@ -1,0 +1,32 @@
+<form (submit)="registerUser()">
+    <label>Name:</label>
+    <input type="text" name="name" [(ngModel)]="user.name" required>
+    
+    <label>Email:</label>
+    <input type="email" name="email" [(ngModel)]="user.email" required>
+    
+    <label>Phone Number:</label>
+    <input type="text" name="phoneNumber" [(ngModel)]="user.phoneNumber" required>
+    
+    <label>Age:</label>
+    <input type="number" name="age" [(ngModel)]="user.age" required>
+    
+    <label>Gender:</label>
+    <input type="text" name="gender" [(ngModel)]="user.gender" required>
+    
+    <label>Date of Birth:</label>
+    <input type="date" name="dob" [(ngModel)]="user.dob" required>
+    
+    <button type="submit">Register</button>
+  </form>
+  <div *ngIf="allUsers && allUsers.length > 0">
+    <h2>All Users:</h2>
+    <ul>
+      <li *ngFor="let user of allUsers">
+        <p>Name: {{ user.name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Phone Number: {{ user.phoneNumber }}</p>
+        <!-- Display other user details as needed -->
+      </li>
+    </ul>
+  </div>
